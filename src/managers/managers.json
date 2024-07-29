@@ -1,0 +1,23 @@
+[
+    {
+      "managerId": 1,
+      "name": "Maria",
+      "Customer": [
+        {
+          "id": 1,
+          "name": "Bruno Henrique",
+          "cpf": "56375067892",
+          "adress": "Rua das aguas",
+          "contact": "11892183921",
+          "Account": [
+            {
+                "id": 2,
+                "name": "SocialBank",
+                "balance": 500
+            }
+          ]
+        }
+      ]
+    }
+
+]

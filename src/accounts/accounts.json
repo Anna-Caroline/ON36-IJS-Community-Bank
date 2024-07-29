@@ -1,0 +1,12 @@
+[
+    {
+      "id": 1,
+      "name": "CommunityBank",
+      "balance": 2000
+    },
+    {
+      "id": 2,
+      "name": "SocialBank",
+      "balance": 500
+    }
+  ]

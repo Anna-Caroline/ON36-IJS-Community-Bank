@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "nome": "Jessika",
+      "cpf": "4123343453",
+      "address": "Rua dos campos",
+      "contact": "jessika@email.com",
+      "Account": [
+        [
+            {
+                "id": 1,
+                "name": "CommunityBank",
+                "balance": 2000
+              }
+        ]
+      ]
+    }
+]
