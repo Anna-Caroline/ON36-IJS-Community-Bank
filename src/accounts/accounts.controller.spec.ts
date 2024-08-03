@@ -1,4 +1,14 @@
-import { Controller, Get, Post, Body, Param, Put, Patch, Delete, ParseIntPipe } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  Put,
+  Patch,
+  Delete,
+  ParseIntPipe,
+} from '@nestjs/common';
 import { AccountsService } from './accounts.service';
 import { Account } from './account.model';
 
@@ -7,7 +17,10 @@ export class AccountsController {
   constructor(private readonly accountsService: AccountsService) {}
 
   @Post()
-  createAccount(@Body('name') name: string, @Body('balance') balance: number): Account {
+  createAccount(
+    @Body('name') name: string,
+    @Body('balance') balance: number,
+  ): Account {
     return this.accountsService.createAccount(name, balance);
   }
 
@@ -23,12 +36,15 @@ export class AccountsController {
 
   @Get('total/balance')
   getTotalBalance(): { totalBalance: number } {
-    const totalBalance = this.accountsService.getTotalBalance()
-    return {totalBalance};
+    const totalBalance = this.accountsService.getTotalBalance();
+    return { totalBalance };
   }
-  
+
   @Patch(':id/balance-update')
-  updateBalance(@Param('id', ParseIntPipe) id: number, @Body('balance') newBalance: number): Account {
+  updateBalance(
+    @Param('id', ParseIntPipe) id: number,
+    @Body('balance') newBalance: number,
+  ): Account {
     const updatedAccount = this.accountsService.updateBalance(id, newBalance);
     return updatedAccount;
   }
