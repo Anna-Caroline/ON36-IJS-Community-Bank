@@ -10,7 +10,8 @@ export class AccountsService {
 
   constructor(private readonly accountsService: AccountsService) {
     const accounts = this.readAccounts();
-    this.idCounter = accounts.length > 0 ? accounts[accounts.length - 1].id + 1 : 1;
+    this.idCounter =
+      accounts.length > 0 ? accounts[accounts.length - 1].id + 1 : 1;
   }
 
   private readAccounts(): Account[] {
@@ -24,7 +25,7 @@ export class AccountsService {
 
   findById(id: number): Account {
     const listOfAccounts = this.readAccounts();
-    const account = listOfAccounts.find(account => account.id === id);
+    const account = listOfAccounts.find((account) => account.id === id);
     if (!account) {
       throw new NotFoundException(`Account with id ${id} not found`);
     }
@@ -33,12 +34,17 @@ export class AccountsService {
 
   getTotalBalance(): number {
     const listOfAccounts = this.readAccounts();
-    return listOfAccounts.reduce((total, account) => total + account.balance, 0);
+    return listOfAccounts.reduce(
+      (total, account) => total + account.balance,
+      0,
+    );
   }
 
   updateBalance(id: number, newBalance: number): Account {
     const listOfAccounts = this.readAccounts();
-    const accountToUpdate = listOfAccounts.find(account => account.id === Number(id));
+    const accountToUpdate = listOfAccounts.find(
+      (account) => account.id === Number(id),
+    );
 
     if (!accountToUpdate) {
       throw new NotFoundException('Account not found');
@@ -71,7 +77,9 @@ export class AccountsService {
 
   removeAccount(id: number): void {
     const listOfAccounts = this.readAccounts();
-    const indexOfAccount = listOfAccounts.findIndex(account => account.id === id);
+    const indexOfAccount = listOfAccounts.findIndex(
+      (account) => account.id === id,
+    );
 
     if (indexOfAccount < 0) {
       throw new NotFoundException('Account not found');
